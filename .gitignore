@@ -55,7 +55,6 @@ yarn.lock
 
 # Java #
 ########
-*.class
 *.war
 *.ear
 target/
@@ -63,7 +62,6 @@ target/
 # Maven #
 #########
 log/
-target/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
