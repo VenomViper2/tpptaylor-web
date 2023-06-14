@@ -1,0 +1,47 @@
+---
+export interface Props {
+    title: string;
+}
+const {title} = Astro.props;
+---
+<div class="container">
+    <div class="typewriter">
+        <h1><span class="text-gradient">&#123; {title} &#125;</span></h1>    </div>
+</div>
+
+
+
+<style>
+    h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        margin: 0;
+    }
+
+    .text-gradient {
+        background-image: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 400%;
+        background-position: 0%;
+    }
+
+    .container {
+        display: inline-block;
+    }
+
+    .typewriter{
+        overflow: hidden;
+        border-right: .15em solid #20D820FF;
+        white-space: nowrap;
+        animation:
+                typing 1s forwards;
+        font-size: 1.6rem;
+        width: 0;
+    }
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+
+</style>

@@ -1,81 +1,140 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Title from "../components/Title.astro";
+import Hero from "../components/Hero.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+<Layout title="Welcome."
+        description="Welcome to my website built using the Astro Framework. While it's still a work in progress, my goal is to capture and share my journey, learning experiences, and projects.">
+
+    <main>
+        <div class="projects" style="display: flex">
+            <h1>My Projects</h1>
+            <p class="introduction">Over the last year I have contributed to the following projects</p>
+            <div class="project">
+                <h2><a href="https://steam.minibuilds.io/">Steam Game Picker</a></h2>
+                <p>The Steam Game Picker is a web application designed to randomly select a game from a user's Steam
+                    library.
+                </p>
+                <p>This project was created, deployed and monitored using the following: </p>
+                <ul>
+                    <li>Typescript</li>
+                    <li>Angular</li>
+                    <li>Java</li>
+                    <li>Spring Framework</li>
+                    <li>Kubernetes</li>
+                    <li>Docker</li>
+
+                </ul>
+                <img class="project-image" src="/steam-game-picker.png"/>
+            </div>
+            <div class="project">
+                <h2><a href="https://dex.minibuilds.io/login">Dex</a></h2>
+                <p>Dex is an application that enables users to monitor and manage data, ranging from personal weight
+                    tracking to tracking time spent on specific activities. With Dex, users have the ability to create
+                    personalized tables and dashboards, facilitating convenient organization, sorting, and visualization
+                    of
+                    their data.</p>
+
+                <p>This project was created, deployed and monitored using the following: </p>
+                <ul>
+                    <li>Typescript</li>
+                    <li>Angular</li>
+                    <li>Java</li>
+                    <li>Spring Framework</li>
+                    <li>Kubernetes</li>
+                    <li>Docker</li>
+                </ul>
+                <img class="project-image" src="/dex.png"/>
+                <p class="note">*Dex is under active development and is not finished</p>
+            </div>
+
+        </div>
+
+
+    </main>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .introduction {
+        display: flex;
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 2rem;
+    }
+
+    .project {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin-bottom: 0.5rem;
+    }
+
+    ul {
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+    }
+
+    li {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        list-style-type: disc;
+        margin-bottom: 0.5rem;
+    }
+
+    .projects {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+    .project-image {
+        max-width: 100%;
+        display: flex;
+    }
+    @media (max-width: 400px) {
+        .project-image {
+            max-width: 300px;
+        }
+    }
+    .note {
+        font-size: 0.9rem;
+        font-style: italic;
+        color: #888;
+        margin-top: 2rem;
+    }
+
 </style>

@@ -1,0 +1,54 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Title from "../../components/Title.astro";
+---
+
+
+<Layout title="About me." description="I'm Tom, a developer with a passion for learning and coding!">
+    <main>
+        <div class="introduction">
+
+            <p> My
+                journey into the world of development started after a fulfilling career as a firefighter. Now, I spend
+                my
+                days immersed in coding, constantly expanding my knowledge and honing my skills. </p>
+            <p>
+                When I'm not coding, I enjoy spending time with my wife and our German Shepherd Luna. We cherish
+                moments
+                together, whether it's exploring the outdoors, diving into a good book, or simply embracing the joys of
+                everyday life.
+            <p>
+                Through this website, I aim to share my learning experiences, showcase the projects I've worked on.
+            </p>
+
+
+    </main>
+</Layout>
+
+<style>
+    main {
+        margin: auto;
+        padding: 1.5rem;
+        max-width: 60ch;
+    }
+
+    h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        margin: 0;
+    }
+
+    .text-gradient {
+        background-image: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 400%;
+        background-position: 0%;
+    }
+
+    .introduction {
+        font-size: 1.3rem;
+        font-weight: 200;
+        margin-top: 3rem;
+    }
+</style>
