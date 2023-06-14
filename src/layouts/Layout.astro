@@ -1,5 +1,4 @@
 ---
-import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 export interface Props {
 	title: string;
@@ -27,6 +26,11 @@ const { title, description } = Astro.props;
 	:root {
 		--accent: 124, 58, 237;
 		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #20d820 30%, #020402 60%);
+	}
+	main {
+		max-width: 1140px;
+		margin: 0 auto;
+		padding: 2rem;
 	}
 	html {
 		font-family: system-ui, sans-serif;
