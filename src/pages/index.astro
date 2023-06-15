@@ -7,14 +7,16 @@ import Layout from '../layouts/Layout.astro';
 
     <main>
         <div class="projects" style="display: flex">
-            <h1>My Projects</h1>
-            <p class="introduction">Over the last year I have contributed to the following projects</p>
+            <h1 class="text-gradient">My Projects</h1>
+            <p>In my spare time over the last year I have contributed to some projects for
+                <a href="https://www.minibuilds.io/"> Minibuilds</a>.
+                <b>These include:</b></p>
             <div class="project">
-                <h2><a href="https://steam.minibuilds.io/">Steam Game Picker</a></h2>
+                <h2><a class="text-gradient" href="https://steam.minibuilds.io/">Steam Game Picker</a></h2>
                 <p>The Steam Game Picker is a web application designed to randomly select a game from a user's Steam
                     library.
                 </p>
-                <p>This project was created, deployed and monitored using the following: </p>
+                <p>This project was created and deployed using the following: </p>
                 <ul>
                     <li>Typescript</li>
                     <li>Angular</li>
@@ -24,11 +26,12 @@ import Layout from '../layouts/Layout.astro';
                     <li>Docker</li>
 
                 </ul>
-                <img class="project-image" src=`${import.meta.env.BASE_URL}steam-game-picker.png` alt="Steam game picker image"/>
+                <img class="project-image" src=`${import.meta.env.BASE_URL}steam-game-picker.png`
+                     alt="Steam game picker image"/>
 
             </div>
             <div class="project">
-                <h2><a href="https://dex.minibuilds.io/login">Dex</a></h2>
+                <h2><a class="text-gradient" href="https://dex.minibuilds.io/login">Dex</a></h2>
                 <p>Dex is an application that enables users to monitor and manage data, ranging from personal weight
                     tracking to tracking time spent on specific activities. With Dex, users have the ability to create
                     personalized tables and dashboards, facilitating convenient organization, sorting, and visualization
@@ -60,6 +63,13 @@ import Layout from '../layouts/Layout.astro';
         margin: 0;
         padding: 0;
     }
+    .text-gradient {
+        background-image: var(--accent-gradient2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 400%;
+        background-position: 0%;
+    }
 
     h1 {
         font-size: 2rem;
@@ -87,7 +97,6 @@ import Layout from '../layouts/Layout.astro';
     }
 
     a {
-        color: #007bff;
         text-decoration: none;
     }
 
@@ -114,15 +123,18 @@ import Layout from '../layouts/Layout.astro';
         flex-direction: column;
         align-items: start;
     }
+
     .project-image {
         max-width: 100%;
         display: flex;
     }
+
     @media (max-width: 400px) {
         .project-image {
             max-width: 300px;
         }
     }
+
     .note {
         font-size: 0.9rem;
         font-style: italic;
