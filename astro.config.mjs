@@ -8,6 +8,6 @@ export default defineConfig({
   adapter: node({
     mode: "standalone"
   }),
-  site: 'https://venomviper2.github.io/',
+  site: 'https://venomviper2.github.io',
   base: '/tpptaylor-web',
 });
