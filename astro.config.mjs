@@ -6,4 +6,8 @@ export default defineConfig({
 
   site: 'https://venomviper2.github.io',
   base: '/tpptaylor-web',
+  output: 'static',
+  build: {
+    assets: 'astro'
+  }
 });
