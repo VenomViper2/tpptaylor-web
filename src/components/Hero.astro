@@ -1,6 +1,5 @@
 ---
 import Title from "./Title.astro";
-import Description from "./Description.astro";
 
 export interface Props {
     description: string;
@@ -38,7 +37,7 @@ const {description, title} = Astro.props;
         height: 100vh;
         background-size: cover;
         padding-top: 32px;
-        background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(/tokyo-hero.jpg);
+        background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(/src/assets/images/tokyo-hero.jpg);
         background-position: center center;
 
     }
