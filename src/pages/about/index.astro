@@ -5,21 +5,10 @@ import Layout from "../../layouts/Layout.astro";
 
 <Layout title="About me" description="I'm Tom, a developer with a passion for learning and coding!">
     <main>
-        <div class="introduction">
-
-            <p> My
-                journey into the world of development started after a fulfilling career as a firefighter. Now, I spend
-                my
-                days immersed in coding, constantly expanding my knowledge and honing my skills. </p>
-            <p>
-                When I'm not coding, I enjoy spending time with my wife and our German Shepherd Luna. We cherish
-                moments
-                together, whether it's exploring the outdoors, diving into a good book, or simply embracing the joys of
-                everyday life.
-            </p>
-            <p>
-                Through this website, I aim to share my learning experiences, showcase the projects I've worked on.
-            </p>
+        <div class="projects" style="display: flex">
+            <h1 class="text-gradient">Work in Progress</h1>
+            <p>TBC</p>
+        </div>
 
 
     </main>
@@ -45,5 +34,11 @@ import Layout from "../../layouts/Layout.astro";
         font-size: 1.3rem;
         font-weight: 200;
         margin-top: 3rem;
+    }
+
+    .projects {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
     }
 </style>
