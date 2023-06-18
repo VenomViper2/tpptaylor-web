@@ -1,0 +1,96 @@
+---
+export interface Props {
+    projectName: string;
+    link: string;
+    description: string;
+    listItem: string[];
+    image: {
+        src: string;
+        alt: string;
+    }
+
+}
+const {description, listItem, projectName, link, image} = Astro.props;
+
+---
+
+<div class="project">
+    <h2><a class="text-gradient" href={link}>{projectName}</a></h2>
+    <p>{description}</p>
+    <p>Technologies used:</p>
+    <ul>
+        {listItem.map((item) => (
+                <li>{item}</li>
+        ))}
+    </ul>
+    <img class="project-image" src=`${import.meta.env.BASE_URL}${image.src}`
+         alt=`${image.alt}Steam game picker image`/>
+
+</div>
+
+<style>
+    body {
+        font-family: 'Atkinson Hyperlegible', serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .project {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--primary);
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin-bottom: 0.5rem;
+        color: var(--primary);
+    }
+
+    ul {
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+    }
+
+    li {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        list-style-type: disc;
+        margin-bottom: 0.5rem;
+    }
+
+    .project-image {
+        max-width: 100%;
+        display: flex;
+    }
+
+    @media (max-width: 400px) {
+        .project-image {
+            max-width: 300px;
+        }
+    }
+
+    .note {
+        font-size: 0.9rem;
+        font-style: italic;
+        color: #888;
+        margin-top: 2rem;
+    }
+
+</style >

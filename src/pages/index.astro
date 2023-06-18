@@ -1,5 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Display from "../components/Display.astro";
+
+const dexProject = {
+    projectName: 'Dex',
+    description: 'Dex is an application that enables users to monitor and manage data, ranging from personal weight tracking to tracking time spent on specific activities. With Dex, users have the ability to create personalized tables and dashboards, facilitating convenient organization, sorting, and visualization of their data.',
+    technologies: ['Typescript', 'Angular', 'Java', 'Spring Framework', 'Kubernetes', 'Docker'],
+    image: {src: `dex.png`, alt: 'Dex image'},
+    link: 'https://dex.minibuilds.io/login'
+}
+const steamProject = {
+    projectName: 'Steam Game Picker',
+    description: 'The Steam Game Picker is a web application designed to randomly select a game from a user\'s Steam library.',
+    technologies: ['Typescript', 'Angular', 'Java', 'Spring Framework', 'Kubernetes', 'Docker'],
+    image: {src: `steam-game-picker.png`, alt: 'Steam game picker image'},
+    link: 'https://steam.minibuilds.io/'
+}
 ---
 
 <Layout title="Welcome."
@@ -7,51 +23,39 @@ import Layout from '../layouts/Layout.astro';
 
     <main>
         <div class="projects" style="display: flex">
-            <h1 class="text-gradient">My Projects</h1>
-            <p>In my spare time over the last year I have contributed to some projects for
-                <a href="https://www.minibuilds.io/"> Minibuilds</a>.
-                <b>These include:</b></p>
-            <div class="project">
-                <h2><a class="text-gradient" href="https://steam.minibuilds.io/">Steam Game Picker</a></h2>
-                <p>The Steam Game Picker is a web application designed to randomly select a game from a user's Steam
-                    library.
+            <div class="padding-bottom-large">
+                <h1 class="text-gradient">My Projects</h1>
+                <p c>
+                    In my spare time over the last year, I have dedicated myself to contributing to various projects for
+                    <a href="https://www.minibuilds.io/"> <b>Minibuilds</b></a>, a software hobby project that I
+                    undertake with a friend. These projects have allowed us to
+                    explore new avenues of creativity, and have been a source of fulfillment and
+                    satisfaction.
                 </p>
-                <p>This project was created and deployed using the following: </p>
-                <ul>
-                    <li>Typescript</li>
-                    <li>Angular</li>
-                    <li>Java</li>
-                    <li>Spring Framework</li>
-                    <li>Kubernetes</li>
-                    <li>Docker</li>
+                <p><b>These include:</b></p>
+            </div>
+            <div class="project-line margin-bottom-small"></div>
 
-                </ul>
-                <img class="project-image" src=`${import.meta.env.BASE_URL}steam-game-picker.png`
-                     alt="Steam game picker image"/>
+            <Display listItem={dexProject.technologies}
+                     image={dexProject.image}
+                     description={dexProject.description}
+                     link={dexProject.link}
+                     projectName={dexProject.projectName}>
+            </Display>
+
+            <div class="project-line margin-bottom-small"></div>
+
+            <Display listItem={steamProject.technologies}
+                     image={steamProject.image}
+                     description={steamProject.description}
+                     link={steamProject.link}
+                     projectName={steamProject.projectName}
+            />
+
+            <div class="project-line"> </div>
+
 
             </div>
-            <div class="project">
-                <h2><a class="text-gradient" href="https://dex.minibuilds.io/login">Dex</a></h2>
-                <p>Dex is an application that enables users to monitor and manage data, ranging from personal weight
-                    tracking to tracking time spent on specific activities. With Dex, users have the ability to create
-                    personalized tables and dashboards, facilitating convenient organization, sorting, and visualization
-                    of
-                    their data.</p>
-
-                <p>This project was created, deployed and monitored using the following: </p>
-                <ul>
-                    <li>Typescript</li>
-                    <li>Angular</li>
-                    <li>Java</li>
-                    <li>Spring Framework</li>
-                    <li>Kubernetes</li>
-                    <li>Docker</li>
-                </ul>
-                <img class="project-image" src=`${import.meta.env.BASE_URL}dex.png` alt="Dex image"/>
-                <p class="note">*Dex is under active development and is not finished</p>
-            </div>
-
-        </div>
 
 
     </main>
@@ -59,16 +63,9 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
     body {
-        font-family: Arial, sans-serif;
+        font-family: 'Atkinson Hyperlegible', serif;
         margin: 0;
         padding: 0;
-    }
-    .text-gradient {
-        background-image: var(--accent-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 400%;
-        background-position: 0%;
     }
 
     h1 {
@@ -98,13 +95,18 @@ import Layout from '../layouts/Layout.astro';
 
     a {
         text-decoration: none;
+        color: var(--primary);
+    }
+
+    a:hover {
+        text-decoration: underline;
     }
 
     p {
         font-size: 1.2rem;
         line-height: 1.5;
         margin-bottom: 0.5rem;
-        color: var(--secondary);
+        color: var(--primary);
     }
 
     ul {
@@ -141,6 +143,11 @@ import Layout from '../layouts/Layout.astro';
         font-style: italic;
         color: #888;
         margin-top: 2rem;
+    }
+
+    .project-line {
+        border-bottom: 2px solid var(--primary);
+        width: 100%;
     }
 
 </style>

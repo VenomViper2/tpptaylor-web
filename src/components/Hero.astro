@@ -16,6 +16,11 @@ const {description, title} = Astro.props;
 <section id="hero">
     <div class="hero-container">
         <div class="navbar">
+            <div class="logo">
+                <a href="/">
+                    <img src=`${import.meta.env.BASE_URL}logo-no-background.svg` alt="logo" width="100px"/>
+                </a>
+            </div>
             <div class="menu">
                 <a href="/">Home</a>
                 <a href="/about">About</a>
@@ -38,17 +43,19 @@ const {description, title} = Astro.props;
         min-height: 700px;
         background-size: contain;
         padding-top: 32px;
-        background:  url(/src/assets/images/hero-banner.png);
-        background-position: center center;
+        padding-left: 32px;
+        background: url(/src/assets/images/hero-banner-2.png) bottom no-repeat;
+    }
 
+    .logo {
+        display: flex;
+        align-items: center;
     }
 
 
     .hero-container {
         max-width: 1140px;
         margin: 0 auto;
-
-
     }
 
 
@@ -60,7 +67,7 @@ const {description, title} = Astro.props;
 
     .navbar .menu a {
         color: #01161E;
-        font-size: 14px;
+        font-size: 1.2rem;
         transition-duration: 0.4s;
         letter-spacing: 1px;
         text-decoration: none;
@@ -73,11 +80,13 @@ const {description, title} = Astro.props;
         font-size: 14px;
         border-radius: 50px;
         text-decoration: none;
+        padding: 10px 20px;
+        justify-content: center;
     }
 
 
     .hero-box {
-        width: 50%;
+        width: 75%;
         margin-top: 200px;
 
     }
@@ -94,16 +103,6 @@ const {description, title} = Astro.props;
         line-height: 27px;
         padding: 30px 0;
         display: flex;
-    }
-
-    @media (max-width: 768px) {
-        #hero {
-            padding: 32px 16px;
-        }
-
-        .hero-container {
-            padding: 0 16px;
-        }
     }
 
 
