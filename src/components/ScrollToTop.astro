@@ -1,0 +1,85 @@
+---
+
+
+---
+
+<script>
+    //Get the button
+    let scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    const rootElement = document.documentElement;
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    scrollToTopBtn.addEventListener("click", backToTop);
+
+    function backToTop() {
+        rootElement.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    }
+</script>
+
+
+<button id="scrollToTopBtn">^</button>
+
+<style>
+
+    #scrollToTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        color: var(--primary);
+        background-color: transparent;
+        cursor: pointer;
+        width: 5rem;
+        height: 5rem;
+        font-weight: bold;
+        font-size: 5rem;
+        animation: fadeIn 1s;
+        z-index: 1000;
+        border: none;
+        outline: none;
+    }
+
+    #scrollToTopBtn:hover {
+        color: #27a694;
+        animation-name: colorFade;
+        animation-duration: 1s;
+
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes colorFade {
+        from {
+            color: var(--primary);
+        }
+        to {
+            color: #27a694;
+        }
+    }
+
+</style>

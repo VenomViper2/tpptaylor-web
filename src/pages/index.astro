@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Display from "../components/Display.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
 
 const dexProject = {
     projectName: 'Dex',
@@ -19,6 +20,7 @@ const steamProject = {
 ---
 
 <Layout title="Welcome."
+        tabTitle="Welcome"
         description="Welcome to my website built using the Astro Framework. While it's still a work in progress, my goal is to capture and share my journey, learning experiences, and projects.">
 
     <main>
@@ -32,6 +34,7 @@ const steamProject = {
                     explore new avenues of creativity, and have been a source of fulfillment and
                     satisfaction.
                 </p>
+                <ScrollToTop/>
                 <p><b>These include:</b></p>
             </div>
             <div class="project-line margin-bottom-small"></div>

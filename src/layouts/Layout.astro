@@ -3,15 +3,16 @@ import Hero from "../components/Hero.astro";
 export interface Props {
     title: string;
     description: string;
+    tabTitle: string;
 }
 
-const {title, description} = Astro.props;
+const {title, description, tabTitle} = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{title}</title>
+    <title>{tabTitle}</title>
     <meta charset="UTF-8"/>
     <meta name="description" content="Astro description">
     <meta name="viewport" content="width=device-width"/>
@@ -31,7 +32,7 @@ const {title, description} = Astro.props;
         --accent2: 117, 219, 205;
         --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #01161E 30%, #020402 60%);
         --accent-gradient2: linear-gradient(45deg, rgb(var(--accent2)), #2abfff 30%, #020402 5%);
-        --primary: #75DBCD;
+        --primary: #33ecd2;
         --secondary: #01161E;
     }
 
